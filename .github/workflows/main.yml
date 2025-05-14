@@ -3,7 +3,7 @@ name: Release Charts
 on:
   push:
     branches:
-      - main
+      - mtor/test-tekton-helm
 
 jobs:
   release:

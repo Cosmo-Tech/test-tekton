@@ -19,7 +19,7 @@ spec:
     - name: namespace
       value: {{ .Release.Namespace }}
     - name: useOciRegistry
-      value: {{ .Values.useOciRegistry }}
+      value: {{ .Values.useOciRegistry}}
     - name: webAppRepoUrl
       value: {{ .Values.webAppRepoUrl }}
     - name: webAppRevision
