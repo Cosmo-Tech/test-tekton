@@ -42,7 +42,8 @@ spec:
     script: |
       #!/bin/sh
       echo "Pulling Helm chart..."
-      if [ "$(params.useOciRegistry)" = "true" ]; then
+      oci=$(params.useOciRegistry)
+      if [ "$(echo $oci)" = "true" ]; then
         helm pull --registry-config /workspace/helm-secrets/.dockerconfigjson oci://$(params.registryUrl)/$(params.chartName) --version $(params.chartVersion)
         mkdir -p $(workspaces.helm-workspace.path)/$(params.chartName)
         tar -xvzf $(params.chartName)-$(params.chartVersion).tgz -C $(workspaces.helm-workspace.path)/$(params.chartName) --strip-components=1
